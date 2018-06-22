@@ -1,0 +1,437 @@
+:root {
+  --bg_dark_to_light-background: rgba(170,241,250,1);
+  --bg_dark_to_light-background: : rgba(170,241,250,1);
+  --bg_dark_to_light-background:  -moz-linear-gradient(top, rgba(170,241,250,1) 0%, rgba(235,253,255,1) 100%);
+  --bg_dark_to_light-background:  -webkit-gradient(left top, left bottom, color-stop(0%, rgba(170,241,250,1)), color-stop(100%, rgba(235,253,255,1)));
+  --bg_dark_to_light-background:  -webkit-linear-gradient(top, rgba(170,241,250,1) 0%, rgba(235,253,255,1) 100%);
+  --bg_dark_to_light-background:  -o-linear-gradient(top, rgba(170,241,250,1) 0%, rgba(235,253,255,1) 100%);
+  --bg_dark_to_light-background:  -ms-linear-gradient(top, rgba(170,241,250,1) 0%, rgba(235,253,255,1) 100%);
+  --bg_dark_to_light-background: linear-gradient(to bottom, rgba(170,241,250,1) 0%, rgba(235,253,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaf1fa', endColorstr='#ebfdff', GradientType=0 );
+
+    --bg_light_to_dark-background: rgba(235,253,255,1);
+    --bg_light_to_dark-background: -moz-linear-gradient(top, rgba(235,253,255,1) 0%, rgba(170,241,250,1) 100%);
+    --bg_light_to_dark-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235,253,255,1)), color-stop(100%, rgba(170,241,250,1)));
+    --bg_light_to_dark-background: -webkit-linear-gradient(top, rgba(235,253,255,1) 0%, rgba(170,241,250,1) 100%);
+    --bg_light_to_dark-background: -o-linear-gradient(top, rgba(235,253,255,1) 0%, rgba(170,241,250,1) 100%);
+    --bg_light_to_dark-background: -ms-linear-gradient(top, rgba(235,253,255,1) 0%, rgba(170,241,250,1) 100%);
+    --bg_light_to_dark-background:linear-gradient(to bottom, rgba(235,253,255,1) 0%, rgba(170,241,250,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebfdff', endColorstr='#aaf1fa', GradientType=0 );
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#intro-section{
+  background-color: #aaf1fa;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1000;
+}
+
+.intro {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  width:100vw;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-center{
+  height: 67px;
+  max-width: 330px;
+  position: relative;
+}
+
+.btn-txt{
+  text-transform: uppercase;
+  color: #3f4749;
+  line-height: 30px;
+  font-size: 1.5rem;
+  padding: 10px 30px 10px 30px;
+  left: 80px;
+}
+
+.mark {
+   position: absolute;
+   background-image: url('images/mark-main.png');
+   background-repeat: no-repeat;
+   background-size: contain;
+   width: 300px;
+   height: 67px;
+   top: 0;
+   left: -32px;
+   z-index: -1;
+}
+
+.intro-center{
+ min-height: 200px;
+ max-width: 700px;
+}
+
+.intro-text {
+  text-transform: uppercase;
+  color: #3f4749;
+  line-height: 30px;
+  text-align: center;
+}
+
+
+
+@keyframes slide {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(45px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes slide-flip {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-45px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.arrow_down {
+  background-image: url('images/arrow-down.svg');
+  background-repeat: no-repeat;
+  width: 64px;
+  height: 89px;
+  animation: slide 1s ease-in-out infinite;
+  z-index: 100;
+}
+
+.arrow_down_flip {
+  background-image: url('images/arrow-down-flip.svg');
+  background-repeat: no-repeat;
+  width: 64px;
+  height: 89px;
+  animation: slide-flip 1s ease-in-out infinite;
+  z-index: 100;
+
+}
+
+.sky {
+  position: relative;
+  height: 100%;
+  pointer-events: none;
+}
+
+@keyframes move{
+  50% { transform: translateY(-15px); }
+}
+
+.cloud-left {
+  position: absolute;
+    width: 350px;
+    height: 240px;
+    left: 11%;
+    bottom: 10%;
+    animation: move 4s ease-in-out infinite;
+
+}
+
+.cloud-right {
+  position: absolute;
+    width: 250px;
+    height: 140px;
+    right: 10%;
+    top: 15%;
+    animation: move 8s ease-in-out infinite;
+
+
+}
+
+
+.sun {
+  position: absolute;
+  background-image: url('images/sun.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 270px;
+  height: 270px;
+  left: 4%;
+  top: 4%;
+  animation: spin 40s ease-in-out infinite;
+}
+
+canvas {
+  position: fixed;
+  top:0;
+  left: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+.asana-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+.asana-image {
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+
+.asana-image--horizontal {
+  width: 55%;
+}
+
+.yoga-lady{
+  background-size: contain;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80%;
+  margin-top: 20%;
+}
+@keyframes ani {
+  0% {
+   transform: rotate(0deg);
+   transform-origin: 130px 130px;
+ }
+ 100% {
+   transform: rotate(-95deg);
+   transform-origin: 130px 130px;
+ }
+}
+
+.yoga-lady--assana-one {
+    background-image: url(images/sun-assana-one.svg);
+    /* animation: ani 5s ease infinite; */
+}
+
+.yoga-lady--assana-two {
+    background-image: url(images/sun2.svg);
+}
+
+
+.yoga-lady--assana-three {
+    background-image: url(images/ardha-uttanasana.svg);
+}
+
+.yoga-lady--assana-four {
+    background-image: url(images/chaturanga-dandasana.svg);
+}
+
+.yoga-lady--assana-five {
+    background-image: url(images/urdhva-mukha-svanasana.svg);
+}
+
+.yoga-lady--assana-six {
+    background-image: url(images/adho-mukha-svanasana.svg);
+}
+
+@keyframes rubberband {
+0%, 100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+30% {
+    -webkit-transform: scale3d(1.25,.75,1);
+    transform: scale3d(1.25,.75,1);
+}
+ }
+
+.mat {
+    width: 100%;
+    height: 10px;
+    background-color: black;
+    margin-top: -10px;
+    animation: rubberband 3s linear infinite;
+}
+
+
+.assana-description {
+  width: 50%;
+  text-transform: uppercase;
+  color: #3f4749;
+  line-height: 30px;
+  text-align: left;
+}
+
+.asana-description--horizontal {
+  width: 35%;
+}
+
+.assana-description > .spacer {
+  width: 10%;
+}
+
+.assana-description > span {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    font-size: 1rem;
+    z-index: 100;
+}
+
+.assana-description > a > div {
+  margin: 0 auto;
+}
+
+#asana-one-section {
+background: var(--bg_dark_to_light-background);
+}
+
+#asana-two-section {
+  background: var(--bg_light_to_dark-background);
+  width: 100vw;
+  height: 100vh;
+}
+
+#asana-three-section {
+  background: var(--bg_dark_to_light-background);
+  width: 100vw;
+  height: 100vh;
+}
+
+#asana-four-section {
+  background: var(--bg_light_to_dark-background);
+  width: 100vw;
+  height: 100vh;
+}
+
+#asana-five-section {
+  background: var(--bg_dark_to_light-background);
+  width: 100vw;
+  height: 100vh;
+}
+
+#asana-six-section {
+  background: var(--bg_light_to_dark-background);
+  width: 100vw;
+  height: 100vh;
+}
+
+#asana-seven-section {
+  background: var(--bg_dark_to_light-background);
+  width: 100vw;
+  height: 100vh;
+}
+
+.assana-description > .asana--title {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-bottom: 1.3rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  #asana-five-section{
+    padding-top: 20%;
+  }
+
+
+  @keyframes slide {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .intro-text {
+  font-size: 0.7rem;
+  padding: 10px;
+}
+
+  .arrow_down,
+   {
+    width: 50px;
+    height: 69px;
+  }
+
+.arrow_down_flip{
+  display: none;
+}
+
+  .asana-section {
+    flex-direction: column;
+  }
+
+  .assana-description {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+
+  .assana-description > span {
+    width: 100%;
+    font-size: 0.7rem;
+
+  }
+
+  .asana-image {
+    width: 100%;
+    height: 30%;
+    position: relative;
+  }
+
+  .mat {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .sun {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cloud-left {
+      width: 250px;
+      height: 140px;
+      left: 0;
+      bottom: 0;
+      top: 12%;
+
+  }
+
+  .cloud-right {
+    right: 0%;
+    top: 5%;
+  }
+}
